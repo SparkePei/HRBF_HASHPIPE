@@ -1,4 +1,4 @@
-# hrbf_Pipeline_Hashpipe
+# HRBF_HASHPIPE
 ### Introduction
     
 * This  code is used to receive the packets from high speed ethernet, perform beamforming and Stokes calculation and save the accumulated data to disk.The packets are transmitted from RFSoC boards through 100 Gb Ethernet. And the output data will be stored in NVMe SSD cards to get a high data storage rate.<br>
@@ -50,15 +50,15 @@
     ```
 
 ### Settings
-* Select to storage raw beamformed data
+* Select to storage raw beamformed data: 
 	set RECORD_BF_RAW to 1 in gpu_beamformer.h
-* Select to process dual polarization signal
+* Select to process dual polarization signal: 
 	set N_POLS to 2 in gpu_beamformer.h
-* Select to transpose data before execute cuBblasCgemmBatched() 
+* Select to transpose data before execute cuBblasCgemmBatched(): 
 	set TRANS_INPUT to 1 in gpu_beamformer.h 
-* Select to receive packets from generated fake data 
+* Select to receive packets from generated fake data: 
 	set FAKED_INPUT to 1 in gpu_beamformer.h 
-* Set to debug mode and print testing information 
+* Set to debug mode and print testing information: 
 	set TEST_MODE to 1 hrbf_databuf.h 
-* Set number of frequency bins, time samples, beams, elements, accumulation times 
+* Set number of frequency bins, time samples, beams, elements, accumulation times: 
 	set N_FBIN, N_TSAMP, N_BEAM, N_ELEM, N_TSAMP_ACCU in gpu_beamformer.h 
